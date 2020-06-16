@@ -149,11 +149,11 @@ class AjaxMusteriList(View):
                                            
                 idx+=1
                 
-                musteris = musteris.order_by(Lower(order_col_name), 'pk')
+                musteris = musteris.order_by(order_col_name, 'pk')
         
         else:
                           
-                musteris = musteris.order_by(Lower(order_col_name), 'pk')        
+                musteris = musteris.order_by(order_col_name, 'pk')        
 
    
         paginator = Paginator(musteris, length)

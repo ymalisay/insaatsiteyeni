@@ -25,7 +25,7 @@ SECRET_KEY = '(x#+1tx&j6x#p_2225v&9m7!z91uu)*k4g2zfr(x2z%d#^ierf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['insaatsite.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_datatables',
     'django_extensions',
     'bootstrap_datepicker_plus',
-    'gunicorn'
+    
     
 ]
 
