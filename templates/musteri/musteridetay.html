@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="col-md-6">
+   
+ <table  class="table table-bordered" style="width:100%">
+	<thead>
+		<tr>
+            
+			<td >Ad Soyad</td>
+            <td >{{ musteri.ad|default_if_none:"" }}</td>
+        </tr>
+        <tr>
+            <td>Telefon</td>
+            <td >{{musteri.telefon|default_if_none:""}}</td>
+        </tr>
+        <tr>
+           
+            <td >Email</td>
+            <td >{{musteri.email|default_if_none:""}}</td>
+        </tr>
+        <tr>
+			<td >Doğum Tarihi</td>
+            <td >{{musteri.dog_tar|default_if_none:""}}</td>
+        </tr>
+        <tr>
+            <td >Cinsiyet</td>
+            <td >{{musteri.cinsiyet|default_if_none:""}}</td>
+        </tr>
+        <tr>
+            <td >Eğitim</td>
+            <td >{{musteri.egitim|default_if_none:""}}</td>
+        </tr>
+        <tr>
+            <td >Adres</td>
+            <td >{{musteri.adres|default_if_none:""}}</td>
+        </tr>
+        <tr>
+            <td >Kayıt Zamanı</td>
+            <td >{{musteri.created|default_if_none:""}}</td>
+            
+        </tr>
+        <tr>
+
+            <td >Güncelleme Zamanı</td>
+            <td >{{musteri.updated}}</td>
+        </tr>
+    </table> 
+    <div class="col-md-6">
+
+        <!-- <a type="submit" href="{{userfirm}}/musteri/{{pk}}/edit" class="btn btn-primary">Güncelle</a> -->
+       
+        <a type="submit" href="{% url 'musteri:musteriupdate' userfirm pk %}" class="btn btn-primary">Güncelle</a>
+       
+        <button type="button" class="btn btn-danger">Sil</button>
+    </div>
+</div>
+
+{% endblock %}     
+
+
+
+
+	</thead>

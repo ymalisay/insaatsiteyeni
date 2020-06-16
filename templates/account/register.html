@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              </div>
+              <form action="{% url 'giris:register' %}" method="post">
+                {% csrf_token %}
+                <!-- <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="FirstName" name="first_name" placeholder="First Name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" name="last_name" placeholder="Last Name">
+                  </div>
+                </div> -->
+                <div class="form-group row">
+                   <label for="{{ form.email.id_for_label }}" class="col">Email<span class="text-red">*</span>:</label>
+                    <div class="col">
+                      {{ form.email }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="{{ form.username.id_for_label }}" class="col">Username<span class="text-red">*</span>:</label>
+                            <div class="col">
+                                {{ form.username }}
+                            </div>
+                </div>
+                  <div class="form-group row">
+                    <label for="{{ form.userfirm.id_for_label }}" class="col">Userfirm<span class="text-red">*</span>:</label>
+                  
+                    <select class="col" name="userfirm" id="id_userfirm"> 
+                    <option value={{form.userfirm}} </option> 
+                    
+                                                        
+                  </select>
+                </div>
+                
+                <div class="form-group row">
+                  <label for="{{ form.password1.id_for_label }}" class="col">Password<span class="text-red">*</span>:</label>
+                  <div class="col">
+                      {{ form.password1 }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                <label for="{{ form.password2.id_for_label }}" class="col">Password2<span class="text-red">*</span>:</label>
+                <div class="col">
+                      {{ form.password2 }}
+                    </div>
+                </div>
+                <button type="submit" id="submit" class="btn btn-primary btn-user btn-block">
+                  Register Account
+                </button>
+                <hr>
+                <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <i class="fab fa-google fa-fw"></i> Register with Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                </a> -->
+              </form>
+              <hr>
+              <div class="text-center">
+                <button class="small" href="forgot-password.html">Forgot Password?</button>
+              </div>
+              <div class="text-center">
+                <button class="small" href="login.html">Already have an account? Login!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+{% endblock %}
